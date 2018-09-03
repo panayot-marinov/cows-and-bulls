@@ -20,7 +20,7 @@ public class Engine {
                 generator.generateNumber();
 
         System.out.println("The game has started!");
-       //System.out.println(randomNumber);
+       System.out.println(randomNumber);
 
         int bullsCount = 0;
         while(bullsCount < 4) {
@@ -44,8 +44,8 @@ public class Engine {
 
             if(bullsCount == 3 && cowsCount == 1) break;
             String outputMessage = "";
-            if(bullsCount > 0) outputMessage += bullsCount + " bulls ";
-            if(cowsCount > 0) outputMessage += cowsCount + " cows";
+             outputMessage += bullsCount + " bull(s) ";
+             outputMessage += cowsCount + " cow(s)";
             writer.write(outputMessage);
         }
         System.out.println("Congratulations! You won!");
