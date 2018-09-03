@@ -1,7 +1,7 @@
-import Contracts.IGenerator;
-import Contracts.IWriter;
-import MainElements.Computer;
-import MainElements.ConsoleWriter;
+import contracts.IGenerator;
+import contracts.IWriter;
+import entities.Computer;
+import entities.ConsoleWriter;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,6 +9,6 @@ public class Main {
         IGenerator generator = new Computer();
 
         Engine engine = new Engine(writer, generator);
-        engine.Run();
+        engine.run();
     }
 }

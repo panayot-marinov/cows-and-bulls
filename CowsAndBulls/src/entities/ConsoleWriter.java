@@ -1,9 +1,9 @@
-package MainElements;
+package entities;
 
-import Contracts.IWriter;
+import contracts.IWriter;
 
 public class ConsoleWriter implements IWriter {
-    public void Write(String message) {
+    public void write(String message) {
         System.out.println(message);
     }
 }

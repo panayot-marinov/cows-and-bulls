@@ -1,6 +1,6 @@
-package Animals;
+package animals;
 
-import Contracts.IAnimal;
+import contracts.IAnimal;
 
 public class Cow implements IAnimal {
     private final String animalType = "Cow";

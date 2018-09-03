@@ -1,8 +1,8 @@
-package MainElements;
+package entities;
 
-import Animals.Bull;
-import Animals.Cow;
-import Contracts.IAnimal;
+import animals.Bull;
+import animals.Cow;
+import contracts.IAnimal;
 
 import java.util.ArrayList;
 
@@ -49,7 +49,7 @@ public class Number {
         this.fourthDigit = value;
     }
 
-    private boolean ContainsDigit(int digit){
+    private boolean containsDigit(int digit){
         boolean containsDigit =
                 digit == this.firstDigit ||
                         digit == this.secondDigit ||
@@ -59,34 +59,34 @@ public class Number {
         return containsDigit;
     }
 
-    public ArrayList<IAnimal> CompareWith(Number numberToCompare){
+    public ArrayList<IAnimal> compareWith(Number numberToCompare){
         ArrayList<IAnimal> animals = new ArrayList<>();
         
         if(numberToCompare.firstDigit == this.firstDigit){
             animals.add(new Bull());
         }
-        else if(this.ContainsDigit(numberToCompare.firstDigit)){
+        else if(this.containsDigit(numberToCompare.firstDigit)){
             animals.add(new Cow());
         }
 
         if(numberToCompare.secondDigit == this.secondDigit){
             animals.add(new Bull());
         }
-        else if(this.ContainsDigit(numberToCompare.secondDigit)){
+        else if(this.containsDigit(numberToCompare.secondDigit)){
             animals.add(new Cow());
         }
 
         if(numberToCompare.thirdDigit == this.thirdDigit){
             animals.add(new Bull());
         }
-        else if(this.ContainsDigit(numberToCompare.thirdDigit)){
+        else if(this.containsDigit(numberToCompare.thirdDigit)){
             animals.add(new Cow());
         }
 
         if(numberToCompare.fourthDigit == this.fourthDigit){
             animals.add(new Bull());
         }
-        else if(this.ContainsDigit(numberToCompare.fourthDigit)){
+        else if(this.containsDigit(numberToCompare.fourthDigit)){
             animals.add(new Cow());
         }
 

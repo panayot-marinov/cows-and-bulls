@@ -1,11 +1,11 @@
-package Utils;
+package utils;
 
-import MainElements.Number;
+import entities.Number;
 
 import java.util.Scanner;
 
 public class PlayerUtils {
-    public static Number ReadNumber(){
+    public static Number readNumber(){
         Scanner scanner = new Scanner(System.in);
         int numberToRead = Integer.parseInt(scanner.nextLine());
         Number resultNumber = new Number(numberToRead);

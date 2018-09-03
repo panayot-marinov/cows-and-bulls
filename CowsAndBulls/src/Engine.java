@@ -1,12 +1,10 @@
-import Contracts.IAnimal;
-import Contracts.IGenerator;
-import Contracts.IWriter;
-import MainElements.Number;
-import Utils.PlayerUtils;
-import com.sun.org.apache.xpath.internal.SourceTree;
+import contracts.IAnimal;
+import contracts.IGenerator;
+import contracts.IWriter;
+import entities.Number;
+import utils.PlayerUtils;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Engine {
     private IWriter writer;
@@ -17,17 +15,17 @@ public class Engine {
         this.generator = generator;
     }
 
-    public void Run(){
+    public void run(){
         Number randomNumber =
-                generator.GenerateNumber();
+                generator.generateNumber();
 
         System.out.println("The game has started!");
        //System.out.println(randomNumber);
 
         int bullsCount = 0;
         while(bullsCount < 4) {
-            Number playerNumber = PlayerUtils.ReadNumber();
-            ArrayList<IAnimal> animals = playerNumber.CompareWith(randomNumber);
+            Number playerNumber = PlayerUtils.readNumber();
+            ArrayList<IAnimal> animals = playerNumber.compareWith(randomNumber);
             bullsCount = 0;
             int cowsCount = 0;
             for (IAnimal animal:
@@ -44,10 +42,11 @@ public class Engine {
                 }
             }
 
+            if(bullsCount == 3 && cowsCount == 1) break;
             String outputMessage = "";
             if(bullsCount > 0) outputMessage += bullsCount + " bulls ";
             if(cowsCount > 0) outputMessage += cowsCount + " cows";
-            writer.Write(outputMessage);
+            writer.write(outputMessage);
         }
         System.out.println("Congratulations! You won!");
     }

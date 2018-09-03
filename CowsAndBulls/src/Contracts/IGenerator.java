@@ -1,8 +1,8 @@
-package Contracts;
+package contracts;
 
 
-import MainElements.Number;
+import entities.Number;
 
 public interface IGenerator {
-    Number GenerateNumber();
+    Number generateNumber();
 }

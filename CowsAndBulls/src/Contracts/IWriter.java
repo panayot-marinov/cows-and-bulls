@@ -1,5 +1,5 @@
-package Contracts;
+package contracts;
 
 public interface IWriter {
-    void Write(String message);
+    void write(String message);
 }
