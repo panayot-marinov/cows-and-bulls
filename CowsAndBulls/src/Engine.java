@@ -3,6 +3,7 @@ import Contracts.IGenerator;
 import Contracts.IWriter;
 import MainElements.Number;
 import Utils.PlayerUtils;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,7 +21,8 @@ public class Engine {
         Number randomNumber =
                 generator.GenerateNumber();
 
-        System.out.println(randomNumber);
+        System.out.println("The game has started!");
+       //System.out.println(randomNumber);
 
         int bullsCount = 0;
         while(bullsCount < 4) {
@@ -47,6 +49,6 @@ public class Engine {
             if(cowsCount > 0) outputMessage += cowsCount + " cows";
             writer.Write(outputMessage);
         }
-        System.out.println("You won!");
+        System.out.println("Congratulations! You won!");
     }
 }
